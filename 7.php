@@ -63,7 +63,6 @@
   <?php
   if (isset($_POST['submit'])) {
     $nama = $_POST['nama'];
-    $kehadiran = $_POST['kehadiran'];
     $mtk = $_POST['mtk'];
     $indo = $_POST['indo'];
     $ing = $_POST['ing'];
@@ -72,7 +71,7 @@
 
     $jumlahData = count($nama);
 
-    $output = []; // array untuk menyimpan output
+    $output = [];
 
     for ($i = 0; $i < $jumlahData; $i++) {
       $rataRata = ($mtk[$i] + $indo[$i] + $dpk[$i] + $agama[$i] + $ing[$i]);
@@ -97,7 +96,6 @@
     foreach ($output as $data) {
       echo "Nama: " . $data['nama'] . "<br>";
       echo "Rata-rata: " . $data['rata_rata'] . "<br>";
-      echo "Kehadiran: " . $data['kehadiran'] . "% <br>";
       echo "--------------------------------------------------------";
       echo "<br>";
     }
